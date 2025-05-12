@@ -1,0 +1,13 @@
+[Unit]
+Description=Monitoring Server Service
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/monitoring-agent/server
+ExecStart=/usr/bin/python3 /opt/monitoring-agent/server/server.py
+Restart=always
+User=root
+Environment=FLASK_ENV=production
+
+[Install]
+WantedBy=multi-user.target

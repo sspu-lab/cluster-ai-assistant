@@ -1,0 +1,13 @@
+# /etc/systemd/system/client-monitor.service
+[Unit]
+Description=GPU/CPU Client Monitor
+After=network.target
+
+[Service]
+ExecStart=/opt/monitor/client --machine-name=A --server-ip=192.168.10.212
+Restart=always
+User=root
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+[Install]
+WantedBy=multi-user.target

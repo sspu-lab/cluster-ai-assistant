@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitoring Client Service
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/monitoring-agent/client
+ExecStart=/usr/bin/python3 /opt/monitoring-agent/client/client.py
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
